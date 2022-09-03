@@ -9,6 +9,7 @@ import dev.refox.trackapp.MainActivity
 import dev.refox.trackapp.R
 import dev.refox.trackapp.databinding.ActivityLoginBinding
 import dev.refox.trackapp.databinding.ActivitySignupBinding
+import dev.refox.trackapp.screens.AddMenteeActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -35,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
 
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, AddMenteeActivity::class.java)
                         startActivity(intent)
                     } else {
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
@@ -48,13 +49,12 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-
-    override fun onStart() {
-        super.onStart()
-
-        if(firebaseAuth.currentUser != null){
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-    }
+//    override fun onStart() {
+//        super.onStart()
+//
+//        if(firebaseAuth.currentUser != null){
+//            val intent = Intent(this, AddMenteeActivity::class.java)
+//            startActivity(intent)
+//        }
+//    }
 }

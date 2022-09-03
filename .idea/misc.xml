@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/12mad/StudioProjects/IC_HACK/track-app/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/12mad/StudioProjects/IC_HACK/track-app/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/12mad/StudioProjects/IC_HACK/track-app/app/src/main/res/layout/activity_signup.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_add_mentee.xml" value="0.26153846153846155" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.26153846153846155" />
+        <entry key="app/src/main/res/layout/activity_mentee_basic_details.xml" value="0.24700854700854702" />
+        <entry key="app/src/main/res/layout/activity_mentee_profile_details.xml" value="0.26153846153846155" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.24320652173913043" />
       </map>
     </option>
   </component>
