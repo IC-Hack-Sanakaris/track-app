@@ -1,15 +1,13 @@
 package dev.refox.trackapp.auth
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.*
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import dev.refox.trackapp.MentorDetails
+import dev.refox.trackapp.data.MentorDetails
 import dev.refox.trackapp.databinding.ActivitySignupBinding
 import dev.refox.trackapp.screens.AddMenteeActivity
 
