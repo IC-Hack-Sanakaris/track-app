@@ -1,9 +1,8 @@
 package dev.refox.trackapp.screens
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import dev.refox.trackapp.R
+import androidx.appcompat.app.AppCompatActivity
 import dev.refox.trackapp.databinding.ActivityAddMenteeBinding
 
 class AddMenteeActivity : AppCompatActivity() {
@@ -16,5 +15,9 @@ class AddMenteeActivity : AppCompatActivity() {
         binding.btnAddMentee.setOnClickListener {
             startActivity(Intent(this, MenteeBasicDetailsActivity::class.java))
         }
+    }
+
+    override fun onBackPressed() {
+        finishAffinity()
     }
 }
