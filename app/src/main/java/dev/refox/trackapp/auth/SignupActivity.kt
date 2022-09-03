@@ -1,15 +1,19 @@
 package dev.refox.trackapp.auth
 
+import android.R
 import android.content.Intent
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.google.firebase.auth.*
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import dev.refox.trackapp.data.MentorDetails
 import dev.refox.trackapp.databinding.ActivitySignupBinding
 import dev.refox.trackapp.screens.AddMenteeActivity
+
 
 class SignupActivity : AppCompatActivity() {
 
@@ -23,11 +27,12 @@ class SignupActivity : AppCompatActivity() {
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        window.setStatusBarColor(ContextCompat.getColor(baseContext, dev.refox.trackapp.R.color.yellow))
         firebaseAuth = FirebaseAuth.getInstance()
 
         binding.tvToLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
         binding.btnSignup.setOnClickListener {
             val email = binding.emailET.text.toString()
@@ -74,5 +79,6 @@ class SignupActivity : AppCompatActivity() {
 
     private fun startMenteeActivity(){
         startActivity(Intent(this, AddMenteeActivity::class.java))
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 }

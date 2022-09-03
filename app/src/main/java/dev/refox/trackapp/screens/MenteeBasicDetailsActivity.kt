@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import dev.refox.trackapp.R
@@ -17,6 +18,8 @@ class MenteeBasicDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMenteeBasicDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        window.setStatusBarColor(ContextCompat.getColor(baseContext, dev.refox.trackapp.R.color.yellow))
 
         binding.btnSubmitMenteeData.setOnClickListener {
             val name = binding.menteeName.text.toString()

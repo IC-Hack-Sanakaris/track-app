@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
 import dev.refox.trackapp.MainActivity
 import dev.refox.trackapp.R
@@ -20,12 +21,12 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
+        window.setStatusBarColor(ContextCompat.getColor(baseContext,R.color.yellow))
         firebaseAuth = FirebaseAuth.getInstance()
         binding.tvToSignup.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         binding.btnLogin.setOnClickListener {
@@ -38,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
                     if (it.isSuccessful) {
                         val intent = Intent(this, AddMenteeActivity::class.java)
                         startActivity(intent)
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
                     } else {
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
 
