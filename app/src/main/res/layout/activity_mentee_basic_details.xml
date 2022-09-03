@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Basic Details of Mentee:"
+        android:text="Enter Basic Details of Mentee :"
         android:layout_marginBottom="35dp"
         android:layout_marginLeft="20dp"
         android:fontFamily="@font/sofiaprosoftbold"
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="150dp"
         app:boxStrokeColor="@color/yellow"
         app:hintTextColor="@color/yellow"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,25 +114,97 @@
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
+    <TextView
+        android:id="@+id/tvuserprofiles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter username of profiles :"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/sofiaprosoftbold"
+        android:textSize="22dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menteeUsnLayout"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/menteeCodechefLayout"
+        style="@style/LoginTextInputOuterFieldStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        app:boxStrokeColor="@color/yellow"
+        app:hintTextColor="@color/yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvuserprofiles"
+       >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/menteeCodechef"
+            style="@style/LoginTextInputInnerFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Codechef Username"
+            android:fontFamily="@font/sofiaprosoftregular"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/menteeCodeforcesLayout"
+        style="@style/LoginTextInputOuterFieldStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        app:boxStrokeColor="@color/yellow"
+        app:hintTextColor="@color/yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menteeCodechefLayout"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/menteeCodeforces"
+            style="@style/LoginTextInputInnerFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Codechef Username"
+            android:fontFamily="@font/sofiaprosoftregular"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btnNext"
+        android:id="@+id/btnSubmitMenteeData"
         android:layout_width="0dp"
         android:layout_height="50dp"
         app:cardCornerRadius="5dp"
         android:backgroundTint="@color/yellow"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp"
         android:layout_marginHorizontal="16dp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menteeUsnLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next"
+            android:text="Submit"
             android:textSize="18dp"
             android:fontFamily="@font/sofiaprosoftmedium"
             android:layout_gravity="center"
