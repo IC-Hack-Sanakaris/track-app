@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "89955355894",
+    "project_id": "ic-hacks",
+    "storage_bucket": "ic-hacks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89955355894:android:ace9160812fa4b76b070d7",
+        "android_client_info": {
+          "package_name": "dev.refox.trackapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89955355894-s0uujhduo773kpuii5pa0kfkbl9icjpa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.refox.trackapp",
+            "certificate_hash": "d7419a0f16843d742d865f9c296ade2a76b1e7ed"
+          }
+        },
+        {
+          "client_id": "89955355894-cm80lma1tkp8mvg6eiljs86hbe1btct9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy1lkt_GqOmzky3aPVhMBSnhGEeS2-vf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "89955355894-cm80lma1tkp8mvg6eiljs86hbe1btct9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
