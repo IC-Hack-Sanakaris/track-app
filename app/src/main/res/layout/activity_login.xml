@@ -3,9 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@drawable/loginbg"
+    android:layout_height="match_parent"
     tools:context=".auth.LoginActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/emailLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/annimation" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -58,30 +70,27 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/btnLogin"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
-        app:cardCornerRadius="5dp"
-        android:backgroundTint="@color/yellow"
         android:layout_marginHorizontal="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="@color/yellow"
+        app:cardCornerRadius="5dp"
+        android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayout">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="18dp"
-            android:fontFamily="@font/sofiaprosoftmedium"
             android:layout_gravity="center"
+            android:fontFamily="@font/sofiaprosoftmedium"
+            android:text="Login"
             android:textColor="@color/black"
-            />
+            android:textSize="18dp" />
 
     </com.google.android.material.card.MaterialCardView>
     <TextView
@@ -91,7 +100,7 @@
         android:fontFamily="@font/sofiaprosoftbold"
         android:textColor="@color/black"
         android:text="Not Registered,  Sign Up!"
-        app:layout_constraintBottom_toBottomOf="parent"
+       android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
