@@ -42,6 +42,8 @@ class MenteeBasicDetailsActivity : AppCompatActivity() {
                     Toast.makeText(this, "Successfully Entered", Toast.LENGTH_SHORT).show()
                 }
 
+            } else {
+                Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show()
             }
         }
     }
