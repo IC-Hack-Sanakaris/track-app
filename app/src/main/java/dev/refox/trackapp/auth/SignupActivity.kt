@@ -1,12 +1,12 @@
 package dev.refox.trackapp.auth
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
-import dev.refox.trackapp.R
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.*
 import dev.refox.trackapp.databinding.ActivitySignupBinding
+import dev.refox.trackapp.screens.AddMenteeActivity
 
 class SignupActivity : AppCompatActivity() {
 
@@ -22,8 +22,7 @@ class SignupActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         binding.tvToLogin.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, LoginActivity::class.java))
         }
         binding.btnSignup.setOnClickListener {
             val email = binding.emailET.text.toString()
@@ -32,14 +31,23 @@ class SignupActivity : AppCompatActivity() {
 
             if (email.isNotEmpty() && name.isNotEmpty() && confirmPass.isNotEmpty()) {
 
-                    firebaseAuth.createUserWithEmailAndPassword(email, confirmPass).addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            val intent = Intent(this, LoginActivity::class.java)
-                            startActivity(intent)
-                        } else {
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                    firebaseAuth.createUserWithEmailAndPassword(email, confirmPass).addOnSuccessListener {
 
+                        startMenteeActivity()
+
+                    }.addOnFailureListener {
+                        if (it is FirebaseAuthInvalidUserException) {
+                            Toast.makeText(this, "Email cannot be used to create account", Toast.LENGTH_SHORT).show()
+                        } else if (it is FirebaseAuthUserCollisionException) {
+                            Toast.makeText(this, "Email Already Exists", Toast.LENGTH_SHORT).show()
+                        } else if (it is FirebaseAuthWeakPasswordException) {
+                            Toast.makeText(this, "Weak Password", Toast.LENGTH_SHORT).show()
+                        } else if (it is FirebaseAuthEmailException) {
+                            Toast.makeText(this, "Incorrect Email", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Unknown error", Toast.LENGTH_SHORT).show()
                         }
+                        it.printStackTrace()
                     }
 
             } else {
@@ -47,5 +55,9 @@ class SignupActivity : AppCompatActivity() {
 
             }
         }
+    }
+
+    private fun startMenteeActivity(){
+        startActivity(Intent(this, AddMenteeActivity::class.java))
     }
 }
