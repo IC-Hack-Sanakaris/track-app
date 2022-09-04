@@ -4,7 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.animation.AnimationUtils
+import com.google.android.material.card.MaterialCardView
 import dev.refox.trackapp.R
 import dev.refox.trackapp.data.MenteeDataApi
 
@@ -25,6 +28,8 @@ class MenteeDataAdapter(private val menteeList:ArrayList<MenteeDataApi>):
         holder.usn.text = currentItem.usn
         holder.cf.text = currentItem.cf
         holder.cc.text = currentItem.cc
+
+        holder.card.animation = android.view.animation.AnimationUtils.loadAnimation(holder.itemView.context, R.anim.setting_anim)
     }
 
     override fun getItemCount(): Int {
@@ -37,5 +42,6 @@ class MenteeDataAdapter(private val menteeList:ArrayList<MenteeDataApi>):
         val usn: TextView = itemView.findViewById(R.id.cardUsn)
         val cf: TextView = itemView.findViewById(R.id.cardcfRating)
         val cc: TextView = itemView.findViewById(R.id.cardccRating)
+        val card: MaterialCardView = itemView.findViewById(R.id.rvCardItem)
     }
 }
