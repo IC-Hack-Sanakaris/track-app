@@ -4,7 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/buttonbg"
     tools:context=".screens.AddMenteeActivity">
+
+
+
+    <TextView
+        android:id="@+id/tvRecycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Mentee Details : "
+        android:textSize="25sp"
+        android:fontFamily="@font/sofiaprosoftbold"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRatings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/btnAddMentee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRecycler"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/mentee_details_card_layout" />
+
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/btnAddMentee"
@@ -12,11 +43,12 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="16dp"
         android:backgroundTint="@color/yellow"
-        android:layout_marginTop="25sp"
+        android:layout_marginBottom="25dp"
         app:cardCornerRadius="5dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintEnd_toStartOf="@id/btnLogout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,11 +67,13 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="16dp"
         android:backgroundTint="@color/red"
-        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
         app:cardCornerRadius="5dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnAddMentee"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+       >
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,31 +86,5 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <TextView
-        android:id="@+id/tvRecycler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnAddMentee"
-        android:text="Mentee Details : "
-        android:textSize="20sp"
-        android:fontFamily="@font/sofiaprosoftbold"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        />
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvRatings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        android:layout_marginTop="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvRecycler"
-        app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/mentee_details_card_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
