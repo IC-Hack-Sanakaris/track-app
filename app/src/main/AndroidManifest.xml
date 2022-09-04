@@ -16,10 +16,10 @@
         android:theme="@style/Theme.TrackApp"
         tools:targetApi="31">
         <activity
-            android:name=".CCLineChartActivity"
+            android:name=".charts.CCLineChartActivity"
             android:exported="false" />
         <activity
-            android:name=".CFLineChartActivity"
+            android:name=".charts.CFLineChartActivity"
             android:exported="false" />
         <activity
             android:name=".screens.MenteeDashActivity"

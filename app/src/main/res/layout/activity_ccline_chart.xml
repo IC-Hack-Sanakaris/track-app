@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".charts.CCLineChartActivity">
 
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:id="@+id/ccChart"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

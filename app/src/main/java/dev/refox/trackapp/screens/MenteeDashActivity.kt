@@ -8,6 +8,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import dev.refox.trackapp.charts.CCLineChartActivity
 import dev.refox.trackapp.databinding.ActivityMenteeDashBinding
 
 class MenteeDashActivity : AppCompatActivity() {
@@ -19,6 +20,10 @@ class MenteeDashActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         getMenteeDetails(intent.getStringExtra("usn"))
+
+        binding.btnInvCcGraph.setOnClickListener {
+            startActivity(Intent(this,CCLineChartActivity::class.java))
+        }
 
 
     }
