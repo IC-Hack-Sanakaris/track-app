@@ -75,8 +75,6 @@
         android:layout_marginTop="15dp"
         />
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRatings"
         android:layout_width="match_parent"
@@ -89,6 +87,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvRecycler"
         app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/mentee_details_card_layout" />
+
 
 
 

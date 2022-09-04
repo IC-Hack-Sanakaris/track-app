@@ -74,7 +74,7 @@ class AddMenteeActivity : AppCompatActivity() {
                         menteeArrayList.add(mentee!!)
                     }
 
-                    userRecyclerView.adapter = MenteeDataAdapter(menteeArrayList)
+                    userRecyclerView.adapter = MenteeDataAdapter(this@AddMenteeActivity,menteeArrayList)
                 }
             }
 
