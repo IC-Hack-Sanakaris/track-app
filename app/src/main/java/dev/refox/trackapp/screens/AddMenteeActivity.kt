@@ -2,6 +2,7 @@ package dev.refox.trackapp.screens
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,6 +36,17 @@ class AddMenteeActivity : AppCompatActivity() {
         menteeArrayList = arrayListOf<MenteeDataApi>()
         getMenteeData()
 
+        binding.swipe.setOnRefreshListener {
+            val adapter = binding.rvRatings.adapter
+            menteeArrayList.clear()
+            getMenteeData()
+            adapter?.notifyDataSetChanged()
+
+            Handler().postDelayed(Runnable {
+                binding.swipe.isRefreshing = false
+            }, 3000)
+        }
+
         binding.btnAddMentee.setOnClickListener {
             startActivity(Intent(this, MenteeBasicDetailsActivity::class.java))
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
@@ -61,6 +73,7 @@ class AddMenteeActivity : AppCompatActivity() {
                         val mentee = menteeSnapshot.getValue(MenteeDataApi::class.java)
                         menteeArrayList.add(mentee!!)
                     }
+
                     userRecyclerView.adapter = MenteeDataAdapter(menteeArrayList)
                 }
             }

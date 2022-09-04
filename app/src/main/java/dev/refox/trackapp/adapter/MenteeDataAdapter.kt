@@ -23,6 +23,8 @@ class MenteeDataAdapter(private val menteeList:ArrayList<MenteeDataApi>):
     override fun onBindViewHolder(holder: MenteeViewHolder, position: Int) {
         val currentItem = menteeList[position]
 
+        holder.setIsRecyclable(false)
+
         holder.name.text = currentItem.name
         holder.email.text = currentItem.email
         holder.usn.text = currentItem.usn
