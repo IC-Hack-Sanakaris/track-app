@@ -15,6 +15,22 @@
     >
 
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnNotification"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginEnd="25dp"
+        android:outlineAmbientShadowColor="@color/white"
+        android:outlineSpotShadowColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="90dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_notifications_active_24"/>
+    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/btnAddMentee"

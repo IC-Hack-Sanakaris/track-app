@@ -12,6 +12,7 @@ import com.google.firebase.database.*
 import dev.refox.trackapp.R
 import dev.refox.trackapp.adapter.MenteeDataAdapter
 import dev.refox.trackapp.auth.LoginActivity
+import dev.refox.trackapp.auth.SignupActivity
 import dev.refox.trackapp.data.MenteeDataApi
 import dev.refox.trackapp.databinding.ActivityAddMenteeBinding
 
@@ -58,6 +59,12 @@ class AddMenteeActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
+        binding.btnNotification.setOnClickListener {
+            val intent = Intent(this, RatingDecrease::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+        }
+
     }
 
     private fun getMenteeData() {
